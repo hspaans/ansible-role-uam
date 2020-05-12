@@ -1,2 +1,12 @@
 ---
-# tasks file for template
+
+- name: Setting up local groups
+  group:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    system: "{{ item.system | default('false') }}"
+  with_items:
+    - "{{ uam_groups }}"
+  tags:
+    - configuration
+    - uam
