@@ -21,6 +21,7 @@
     password: "{{ item.password | default('!') }}"
     shell: "{{ item.shell | default(uam_default_shell) }}"
     comment: "{{ item.comment | default(item.name) }}"
+  no_log: true
   with_items:
     - "{{ uam_users }}"
   tags:
