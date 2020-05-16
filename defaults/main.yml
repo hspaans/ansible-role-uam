@@ -1,2 +1,4 @@
 ---
 uam_groups: []
+uam_users: []
+uam_default_shell: '/bin/bash'

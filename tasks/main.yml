@@ -10,3 +10,19 @@
   tags:
     - configuration
     - uam
+
+- name: Setting up local users
+  user:
+    name: "{{ item.name }}"
+    group: "{{ item.name | default(item.group) }}"
+    groups: "{{ item.groups | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+    system: "{{ item.system | default('false') }}"
+    password: "{{ item.password | default('!') }}"
+    shell: "{{ item.shell | default(uam_default_shell) }}"
+    comment: "{{ item.comment | default(item.name) }}"
+  with_items:
+    - "{{ uam_users }}"
+  tags:
+    - configuration
+    - uam

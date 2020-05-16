@@ -24,6 +24,9 @@ Including an example of how to use your role (for instance, with variables passe
           - name: ansible
           - name: department99
             state: absent
+        uam_users:
+          - name: ansible
+            comment: Ansible NPA
       roles:
         - role: hspaans.uam
           become: true
