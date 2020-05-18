@@ -27,3 +27,17 @@
   tags:
     - configuration
     - uam
+
+- name: Setting up SSH for local users
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_authorized_key | default(omit) }}"
+    comment: "Ansible Management"
+    exclusive: true
+  when: item.ssh_authorized_key is defined
+  no_log: true
+  with_items:
+    - "{{ uam_users }}"
+  tags:
+    - configuration
+    - uam
