@@ -16,18 +16,21 @@ No dependency on other Ansible Galaxy roles.
 
 ## Example Playbook
 
-    - hosts: servers
-      vars:
-        uam_groups:
-          - name: ansible
-          - name: department99
-            state: absent
-        uam_users:
-          - name: ansible
-            comment: Ansible NPA
-      roles:
-        - role: hspaans.uam
-          become: true
+```yaml
+---
+- hosts: servers
+  vars:
+    uam_groups:
+      - name: ansible
+      - name: department99
+        state: absent
+    uam_users:
+      - name: ansible
+        comment: Ansible NPA
+  roles:
+    - role: hspaans.uam
+      become: true
+```
 
 ## License
 
