@@ -15,7 +15,17 @@
       when: ansible_os_family == 'RedHat'
 
   tasks:
-    - name: Remove packages
-      package:
-        name: git
-        state: absent
+    - name: Remove local users
+      user:
+        name: ansible
+        state: present
+
+    - name: Remove local groups
+      group:
+        name: ansible
+        state: present
+
+    - name: Add local groups
+      group:
+        name: department99
+        state: present

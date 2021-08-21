@@ -21,7 +21,6 @@
     password: "{{ item.password | default('!') }}"
     shell: "{{ item.shell | default(uam_default_shell) }}"
     comment: "{{ item.comment | default(item.name) }}"
-  no_log: true
   with_items:
     - "{{ uam_users }}"
   tags:
@@ -35,7 +34,6 @@
     comment: "Ansible Management"
     exclusive: true
   when: item.ssh_authorized_key is defined
-  no_log: true
   with_items:
     - "{{ uam_users }}"
   tags:

@@ -4,7 +4,7 @@ name: CI
 on:
   pull_request:
   schedule:
-    - cron: '30 5 15 * *'
+    - cron: '37 4 12 * *'
 
 jobs:
 
