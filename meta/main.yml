@@ -6,7 +6,7 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 2.10
+  min_ansible_version: 4.0.0
 
   platforms:
     - name: EL
@@ -17,6 +17,7 @@ galaxy_info:
       versions:
         - buster
         - bullseye
+        - bookworm
     - name: Fedora
       versions:
         - 34
@@ -25,6 +26,7 @@ galaxy_info:
       versions:
         - bionic
         - focal
+        - jammy
 
   galaxy_tags:
     - ssh
