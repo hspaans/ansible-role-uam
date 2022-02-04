@@ -1,0 +1,16 @@
+---
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - master
+
+jobs:
+  ansible-role-release:
+    name: Ansible Role Release
+    uses: hspaans/.github/.github/workflows/ansible-role-release.yml@master
+    secrets:
+      token: ${{ secrets.GALAXY_API_KEY }}
