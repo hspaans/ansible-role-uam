@@ -14,4 +14,4 @@ on:
 jobs:
   ansible-role-ci:
     name: Ansible Role CI
-    uses: hspaans/.github/.github/workflows/ansible-role-ci.yml@master
+    uses: hspaans/.github/.github/workflows/ansible-role-ci.yml@v1
