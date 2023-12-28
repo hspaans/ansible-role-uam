@@ -13,7 +13,7 @@ lint: |
   flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 platforms:
   - name: debian-10
-    image: "ghcr.io/hspaans/molecule-container-debian:10"
+    image: "ghcr.io/hspaans/molecule-containers:debian-10"
     command: ""
     cgroupns_mode: host
     volumes:
