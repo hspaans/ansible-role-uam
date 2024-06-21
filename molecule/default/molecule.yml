@@ -12,8 +12,17 @@ lint: |
   # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
   flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 platforms:
-  - name: debian-10
-    image: "ghcr.io/hspaans/molecule-containers:debian-10"
+  - name: amazonlinux-2023
+    image: "ghcr.io/hspaans/molecule-containers:amazonlinux-2023"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: alpine-3.20
+    image: "ghcr.io/hspaans/molecule-containers:alpine-3.20"
     command: ""
     cgroupns_mode: host
     volumes:
@@ -39,8 +48,8 @@ platforms:
     privileged: true
     pre_build_image: true
 
-  - name: fedora-38
-    image: "ghcr.io/hspaans/molecule-containers:fedora-38"
+  - name: oraclelinux-9
+    image: "ghcr.io/hspaans/molecule-containers:oraclelinux-9"
     command: ""
     cgroupns_mode: host
     volumes:
@@ -48,8 +57,8 @@ platforms:
     privileged: true
     pre_build_image: true
 
-  - name: fedora-39
-    image: "ghcr.io/hspaans/molecule-containers:fedora-39"
+  - name: rockylinux-9
+    image: "ghcr.io/hspaans/molecule-containers:rockylinux-9"
     command: ""
     cgroupns_mode: host
     volumes:
@@ -77,6 +86,24 @@ platforms:
 
   - name: ubuntu-24.04
     image: "ghcr.io/hspaans/molecule-containers:ubuntu-24.04"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: fedora-39
+    image: "ghcr.io/hspaans/molecule-containers:fedora-39"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: fedora-40
+    image: "ghcr.io/hspaans/molecule-containers:fedora-40"
     command: ""
     cgroupns_mode: host
     volumes:
